@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="config_mgmt\**" />
+    <Compile Remove="tickets\**" />
+    <EmbeddedResource Remove="config_mgmt\**" />
+    <EmbeddedResource Remove="tickets\**" />
+    <None Remove="config_mgmt\**" />
+    <None Remove="tickets\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="config_mgmt\Contact.cs" />
+    <Compile Include="config_mgmt\Person.cs" />
+  </ItemGroup>
+
+</Project>
