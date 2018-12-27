@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B295ABF7-991E-4AD5-A43C-D8BCE1EAD680}</ProjectGuid>
+    <ProjectGuid>{12B5ACC9-0537-4EDE-8E74-9D6B9F9C8C2B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>cmd_test_sharp_lib</RootNamespace>
-    <AssemblyName>cmd_test_sharp_lib</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>AddContactType</RootNamespace>
+    <AssemblyName>AddContactType</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,11 +34,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.DirectoryServices" />
-    <Reference Include="System.DirectoryServices.AccountManagement" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,8 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Initialisation.cs" />
-    <Compile Include="model\TeamDirection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -55,28 +51,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\libs\activedirectory.lib\activedirectory.lib.csproj">
-      <Project>{492da910-f90e-4729-8d07-e5bd483f03db}</Project>
-      <Name>activedirectory.lib</Name>
-    </ProjectReference>
     <ProjectReference Include="..\libs\itop.lib\itop.lib.csproj">
       <Project>{3d38fa9e-1fa1-4e3b-a9ab-80e396d28e73}</Project>
       <Name>itop.lib</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json">
-      <Version>12.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="RestSharp">
-      <Version>106.5.4</Version>
-    </PackageReference>
     <PackageReference Include="ServiceStack.Text">
       <Version>5.4.0</Version>
     </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="data\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

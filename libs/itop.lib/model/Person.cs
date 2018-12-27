@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 
@@ -21,8 +22,10 @@ namespace itop.lib
 
         //Methodes
 
-        public void Create(string nom,string prenom,string email,string fonction,out Response QueryResult )
+        public int Create(string nom,string prenom,string email,string fonction,out Response QueryResult )
         {
+            int _ret = 0;
+            JObject jsonMessage = null; 
 
             QueryResult = new Response();
 
@@ -31,8 +34,8 @@ namespace itop.lib
             Response QueryStatus = new Response();
             //todo add email as key ?
             List<Person> ListFindPerson = Ws.Find<Person>("SELECT Person WHERE name ='"+nom+"'", out QueryStatus);
-
-            if(ListFindPerson.Count == 0)
+            
+            if (ListFindPerson.Count == 0)
             {
                 Person newPerson = new Person();
                 newPerson.name = nom.ToUpper();
@@ -42,18 +45,51 @@ namespace itop.lib
                 newPerson.function = new System.Globalization.CultureInfo("FR-fr", false).TextInfo.ToTitleCase(fonction.ToLower());
                 newPerson.org_id = 4;
                 newPerson.status = "active";
+                newPerson.location_id = 55;                                    
 
                 Ws.Create<Person>(newPerson, out QueryResult);
-                
+
+                jsonMessage = JObject.Parse(QueryResult.message);
             }
             else
             {
+                jsonMessage = JObject.Parse(QueryStatus.message);
+                          
+
+
                 QueryStatus.code = 999;
                 QueryStatus.message = "Déja présent ?";
             }
 
+            
+            //object contient un autre objet mais avec le nom crée dynamiquement 
+            // avec le nom de la class et l'ID de l'élément
+            // exemple Person::ID
+            JToken a = jsonMessage.GetValue("objects");
+            a = a.First;  
+            a = a.First;
+            string b = a.Path;
+            _ret = Convert.ToInt32(b.Split(':')[2]);
+
+            return _ret;
         }
 
+        public int GetID(string nom)
+        {
+            int _ret = 0;
+                       
+            Webservice Ws = new Webservice("http://cmdb/itop2/webservices/rest.php?version=1.3", "admin", "itop");
+            Response QueryStatus = new Response();
+            
+            List<Person> ListFindPerson = Ws.Find<Person>("SELECT Person WHERE name ='" + nom + "'", out QueryStatus);
+            JObject jsonMessage = JObject.Parse(QueryStatus.message);
+            JToken a = jsonMessage.GetValue("objects");
+            a = a.First;
+            a = a.First;
+            string b = a.Path;
+            _ret = Convert.ToInt32(b.Split(':')[2]);
+            return _ret;
+        }
 
             public void CheckToDelete()
 		 {

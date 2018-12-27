@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItopSharpLib", "ItopSharpLib\ItopSharpLib.csproj", "{4647D8CC-307C-4082-B73F-0315E40A14A4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cmd_test_sharp_lib", "..\..\cmd_test_sharp_lib\cmd_test_sharp_lib.csproj", "{B295ABF7-991E-4AD5-A43C-D8BCE1EAD680}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cmd_generated_model", "..\..\cmd_generated_model\cmd_generated_model.csproj", "{5B09EEAC-1D13-43DB-971A-01BD7A74268D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itop.lib", "..\itop.lib\itop.lib.csproj", "{3D38FA9E-1FA1-4E3B-A9AB-80E396D28E73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "itop.lib", "..\itop.lib\itop.lib.csproj", "{3D38FA9E-1FA1-4E3B-A9AB-80E396D28E73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "activedirectory.lib", "..\activedirectory.lib\activedirectory.lib.csproj", "{492DA910-F90E-4729-8D07-E5BD483F03DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dataTools", "dataTools", "{4EAD59C8-42B4-4B8D-A094-FA45778D7D29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddContactType", "..\..\AddContactType\AddContactType.csproj", "{12B5ACC9-0537-4EDE-8E74-9D6B9F9C8C2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4647D8CC-307C-4082-B73F-0315E40A14A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4647D8CC-307C-4082-B73F-0315E40A14A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4647D8CC-307C-4082-B73F-0315E40A14A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4647D8CC-307C-4082-B73F-0315E40A14A4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B295ABF7-991E-4AD5-A43C-D8BCE1EAD680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B295ABF7-991E-4AD5-A43C-D8BCE1EAD680}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B295ABF7-991E-4AD5-A43C-D8BCE1EAD680}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,9 +33,20 @@ Global
 		{3D38FA9E-1FA1-4E3B-A9AB-80E396D28E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D38FA9E-1FA1-4E3B-A9AB-80E396D28E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D38FA9E-1FA1-4E3B-A9AB-80E396D28E73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{492DA910-F90E-4729-8D07-E5BD483F03DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{492DA910-F90E-4729-8D07-E5BD483F03DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{492DA910-F90E-4729-8D07-E5BD483F03DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{492DA910-F90E-4729-8D07-E5BD483F03DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12B5ACC9-0537-4EDE-8E74-9D6B9F9C8C2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12B5ACC9-0537-4EDE-8E74-9D6B9F9C8C2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12B5ACC9-0537-4EDE-8E74-9D6B9F9C8C2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12B5ACC9-0537-4EDE-8E74-9D6B9F9C8C2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{12B5ACC9-0537-4EDE-8E74-9D6B9F9C8C2B} = {4EAD59C8-42B4-4B8D-A094-FA45778D7D29}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {62871231-BE0A-43D5-B4C7-4B7F2CBF1ADD}

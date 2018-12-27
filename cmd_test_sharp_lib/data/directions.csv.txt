@@ -1,0 +1,11 @@
+NameFromAD,ShortName,Mail
+direction administrative financière des systèmes d'information,DAFSI,diffusionDAFSI@csa.fr
+direction agence comptable,AC,diffusionAC@csa.fr
+direction de l information et de la documentation institutionelle,DICI,diffusionDICI@csa.fr
+direction des affaires européennes et internationales,DAEI,diffusionDAEI@csa.fr
+direction des programmes,DP,diffusionDP@csa.fr
+direction générale,DG,diffusionDG@csa.fr
+direction juridique,DJ,diffusionDJ@csa.fr
+direction média radio,DMR,diffusionDMR@csa.fr
+direction média tv,DMT,diffusionDMT@csa.fr
+presidence,PRESIDENCE,

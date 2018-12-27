@@ -22,6 +22,7 @@ namespace itop.lib
             nom = nom.ToUpper();
             address = address.ToLower();
 
+            Console.WriteLine("Add Location:{0}",nom);
 
             Response QueryStatus = new Response();
 

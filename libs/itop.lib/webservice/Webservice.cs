@@ -56,10 +56,11 @@ namespace itop.lib
 
             string result = ExecuteQuery();
             QueryStatus = JsonConvert.DeserializeObject<Response>(result);
-            //if (Response.code == 0)
-            //{
-            //}
+            QueryStatus.message = result;
+          
         }
+
+    
 
         public List<T> Find<T>(string Key,out Response QueryStatus)
         {
